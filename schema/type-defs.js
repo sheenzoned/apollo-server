@@ -20,6 +20,15 @@ const typeDefs = gql`
   type Query {
     getAllProjects: [Projects!]!
   }
+
+  type Mutation {
+    createNewWorkflow(
+      id: ID!
+      flowName: String!
+      scope: String!
+      lastRun: String!
+    ): Flows
+  }
 `;
 
 module.exports = { typeDefs };
