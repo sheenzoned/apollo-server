@@ -19,6 +19,11 @@ const typeDefs = gql`
 
   type Query {
     getAllProjects: [Projects!]!
+    projects(
+      projectName: String!
+      isActive: Boolean!
+      isArchived: Boolean!
+    ): [Projects]
   }
 
   type Mutation {

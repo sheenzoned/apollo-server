@@ -2,8 +2,18 @@ const { ProjectList } = require("../mockdata");
 
 const resolvers = {
   Query: {
+    // PROJECTS
     getAllProjects: () => {
       return ProjectList;
+    },
+    projects: (parent, args) => {
+      return ProjectList.filter((proj) => {
+        return (
+          proj.projectName.includes(args.projectName) &&
+          proj.isActive === args.isActive &&
+          proj.isArchived === args.isArchived
+        );
+      });
     },
   },
   Mutation: {
