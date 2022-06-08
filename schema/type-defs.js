@@ -17,6 +17,13 @@ const typeDefs = gql`
     lastRun: String!
   }
 
+  type Notifications {
+    id: ID!
+    timestamp: String!
+    subject: String!
+    message: String!
+  }
+
   type Query {
     getAllProjects: [Projects!]!
     projects(
@@ -24,6 +31,7 @@ const typeDefs = gql`
       isActive: Boolean!
       isArchived: Boolean!
     ): [Projects]
+    notifications: [Notifications]
   }
 
   type Mutation {

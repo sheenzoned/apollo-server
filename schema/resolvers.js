@@ -1,4 +1,4 @@
-const { ProjectList } = require("../mockdata");
+const { ProjectList, NotificationList } = require("../mockdata");
 
 const resolvers = {
   Query: {
@@ -14,6 +14,11 @@ const resolvers = {
           proj.isArchived === args.isArchived
         );
       });
+    },
+
+    //NOTIFICATIONS
+    notifications: () => {
+      return NotificationList;
     },
   },
   Mutation: {
