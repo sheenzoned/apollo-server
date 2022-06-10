@@ -23,16 +23,29 @@ const resolvers = {
   },
   Mutation: {
     createNewWorkflow: (parent, args) => {
+      let flow = {};
       ProjectList.forEach((proj) => {
         if (proj.id === args.id) {
-          proj.flows.push({
+          flow = {
             id: proj.flows.length + 1,
             flowName: args.flowName,
             scope: args.scope,
             lastRun: args.lastRun,
+          };
+          proj.flows.push(flow);
+        }
+      });
+      return flow;
+    },
+    updateWorkflowName: (parent, args) => {
+      ProjectList.map((proj) => {
+        if (proj.id === args.projectId) {
+          proj.flows.map((flow) => {
+            if (flow.id === args.flowId) flow.flowName = args.flowName;
           });
         }
       });
+      return ProjectList;
     },
   },
 };

@@ -41,6 +41,11 @@ const typeDefs = gql`
       scope: String!
       lastRun: String!
     ): Flows
+    updateWorkflowName(
+      projectId: ID!
+      flowId: ID!
+      flowName: String!
+    ): [Projects]
   }
 `;
 
