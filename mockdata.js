@@ -39,7 +39,7 @@ const ProjectList = [
     id: "3",
     projectName: "Project Name 3",
     isActive: false,
-    isArchived: true,
+    isArchived: false,
     isFavorite: false,
     flows: [
       {
@@ -57,6 +57,33 @@ const ProjectList = [
       {
         id: "3",
         flowName: "P3 Flow 3",
+        scope: "Development",
+        lastRun: "1 Hour ago",
+      },
+    ],
+  },
+  {
+    id: "4",
+    projectName: "Project Name 4",
+    isActive: false,
+    isArchived: true,
+    isFavorite: false,
+    flows: [
+      {
+        id: "1",
+        flowName: "P4 Flow 1",
+        scope: "Production",
+        lastRun: "1 Hour ago",
+      },
+      {
+        id: "2",
+        flowName: "P4 Flow 2",
+        scope: "Production",
+        lastRun: "1 Hour ago",
+      },
+      {
+        id: "3",
+        flowName: "P4 Flow 3",
         scope: "Development",
         lastRun: "1 Hour ago",
       },

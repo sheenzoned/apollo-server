@@ -31,10 +31,12 @@ const typeDefs = gql`
       isActive: Boolean!
       isArchived: Boolean!
     ): [Projects]
+    favoriteProjects: [Projects]
     notifications: [Notifications]
   }
 
   type Mutation {
+    updateFavoriteProject(id: ID!): [Projects]
     createNewWorkflow(
       id: ID!
       flowName: String!
